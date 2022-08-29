@@ -26,12 +26,7 @@ public class TextUI : MonoBehaviour
     /// </summary>
     public TMP_Text score;
 
-  
-
-    /// <summary>
-    /// 展示成果
-    /// </summary>
-    public TMP_Text showAchievement;
+    
    
     /// <summary>
     /// 正确按下按键的个数
@@ -110,11 +105,7 @@ public class TextUI : MonoBehaviour
 
     }
     
-    
-    public void ShowAchievement()
-    {
-        showAchievement.text = score.text;
-    }
+
     
     public void ExitGame()
     {

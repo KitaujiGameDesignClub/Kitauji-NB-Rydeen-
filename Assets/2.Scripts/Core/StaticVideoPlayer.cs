@@ -20,14 +20,6 @@ public class StaticVideoPlayer : MonoBehaviour
         audioSource.volume = Settings.SettingsContent.MusicVolume;
     }
 
-    /// <summary>
-    /// 获取当前视频播放多长时间了
-    /// </summary>
-    /// <returns></returns>
-    public static float GetTime()
-    {
-        return videoPlayer.frame / 60f;
-    }
 
     
   
