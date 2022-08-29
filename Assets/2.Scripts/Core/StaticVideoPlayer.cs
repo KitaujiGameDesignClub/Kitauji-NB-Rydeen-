@@ -6,20 +6,11 @@ using UnityEngine.Video;
 /// </summary>
 public class StaticVideoPlayer : MonoBehaviour
 {
-    private static VideoPlayer videoPlayer;
-
-    //24:让左上角显示的帧数与PR中同步那个不
-    public static int frame => (int)videoPlayer.frame + 20;
-
-    public static bool isPlaying => videoPlayer.isPlaying;
-    
+    public static VideoPlayer videoPlayer;
     
     private AudioSource audioSource;
 
-    public static void Play()
-    {
-        videoPlayer.Play();
-    }
+
     private void Awake()
     {
        
