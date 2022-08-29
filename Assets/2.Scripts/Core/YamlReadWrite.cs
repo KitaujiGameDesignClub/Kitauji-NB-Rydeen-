@@ -11,6 +11,7 @@ public static class YamlReadWrite
     {
         Settings,
         PsitonsAction,
+        Cymbal,
     }
  
   
@@ -94,15 +95,12 @@ public static T Read<T>(FileName fileName)
 
     #region yaml用的各种结构体（类）
     /// <summary>
-    /// 储存两位路人王时间的结构体
+    /// 储存大镲时间的结构体
     /// </summary>
     [Serializable]
-    public struct PsitonsAction
+    public struct CymbalAction
     {
-        public bool DebugMode;
-        public List<string> Psiton1;
-        public List<string> Psiton2;
-        public List<string> Psiton3;
+        public string[] time;
     }
     
     /// <summary>
