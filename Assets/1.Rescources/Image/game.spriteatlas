@@ -36,15 +36,27 @@ SpriteAtlas:
     - {fileID: 21300000, guid: d8abc1cdd67847944894658044ab064b, type: 3}
     - {fileID: 21300000, guid: 7514970c81b239c4caa96809134abfb3, type: 3}
     - {fileID: 7482667652216324306, guid: 9d302609884047b4cbcf5a62b66475fd, type: 3}
+    - {fileID: -186800139, guid: 59356a14d6785ff40bb3706d61f3d0d9, type: 3}
+    - {fileID: -1279518075, guid: 59356a14d6785ff40bb3706d61f3d0d9, type: 3}
+    - {fileID: -57736164, guid: 59356a14d6785ff40bb3706d61f3d0d9, type: 3}
+    - {fileID: 1302311372, guid: 59356a14d6785ff40bb3706d61f3d0d9, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: -57736164, guid: 59356a14d6785ff40bb3706d61f3d0d9, type: 3}
+  - {fileID: -1279518075, guid: 59356a14d6785ff40bb3706d61f3d0d9, type: 3}
+  - {fileID: 1302311372, guid: 59356a14d6785ff40bb3706d61f3d0d9, type: 3}
+  - {fileID: -186800139, guid: 59356a14d6785ff40bb3706d61f3d0d9, type: 3}
   - {fileID: 7482667652216324306, guid: 9d302609884047b4cbcf5a62b66475fd, type: 3}
   - {fileID: 21300000, guid: 7514970c81b239c4caa96809134abfb3, type: 3}
   - {fileID: 21300000, guid: d8abc1cdd67847944894658044ab064b, type: 3}
   m_PackedSpriteNamesToIndex:
+  - Rating_Wrong
+  - Rating_Perfect
+  - Rating_Null
+  - Rating_Miss
   - Square
   - clef
   - cymbal
