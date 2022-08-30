@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
 using UnityEngine.UI;
@@ -30,7 +28,7 @@ public class AtlasRead : MonoBehaviour
         
         isimageRenderNotNull = imageRender != null;
         isspriteRendererNotNull = spriteRenderer != null;
-        GetSpriteFromAtlas(); 
+        GetSpriteFromAtlas(spriteName); 
         
        
     }
@@ -38,16 +36,21 @@ public class AtlasRead : MonoBehaviour
     /// <summary>
     /// 从图集中得到图片
     /// </summary>
-    public void GetSpriteFromAtlas()
+    public void GetSpriteFromAtlas(string nameOfSprite = null)
     {
+        if (nameOfSprite == null)
+        {
+            nameOfSprite = spriteName;
+        }
+        
         if (isimageRenderNotNull)
         {
-            imageRender.sprite = spriteAtlas.GetSprite(spriteName);
+            imageRender.sprite = spriteAtlas.GetSprite(nameOfSprite);
         }
 
         if (isspriteRendererNotNull)
         {
-            spriteRenderer.sprite = spriteAtlas.GetSprite(spriteName);
+            spriteRenderer.sprite = spriteAtlas.GetSprite(nameOfSprite);
         }
     }
 
