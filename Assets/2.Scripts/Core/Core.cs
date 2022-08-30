@@ -15,11 +15,20 @@ public class Core : MonoBehaviour,IUpdate
     public  UnityEvent onGetButtonLeftCtrl = new UnityEvent();
     public UnityEvent onGetButtonRightCtrl = new UnityEvent();
 
+    [Header("按键及时")]
     public UnityEvent inTime = new UnityEvent();
+   [Header("按键疏忽")]
     public UnityEvent miss = new UnityEvent();
     
+    [Header("视频播放")]
     public  UnityEvent onStart = new UnityEvent();
+   [Header("领队吹哨")]
     public  UnityEvent onPrepare = new UnityEvent();
+[Header("开始行进")]
+    public UnityEvent onMarch = new UnityEvent();
+
+    [Header("行进结束")] public UnityEvent onEnd = new();
+    [Header("结算")] public UnityEvent onSettlement = new();
     
     /// <summary>
     /// 部分
@@ -66,26 +75,50 @@ public class Core : MonoBehaviour,IUpdate
 
         if(Input.GetKeyDown(KeyCode.LeftControl)) onGetButtonLeftCtrl.Invoke();
         if(Input.GetKeyDown(KeyCode.RightControl)) onGetButtonRightCtrl.Invoke();
-        
-        
+
+       
         
         switch (StaticVideoPlayer.videoPlayer.frame)
         {
-            //开始部分（用于制作跳过）
-            //775:老师说出展现北宇治的实力之前的部分episode = 0
-            case <= 775 when episode == 0:
+            //开始部分（用于制作跳过），到吹哨
+            case <= Episode.whistle when episode == 0:
                 //空格允许跳过老师的话（在玩过之后）
                 if (Input.GetKeyDown(KeyCode.Space) && Settings.SettingsContent.hasPlayed)
                 {
-                    StaticVideoPlayer.videoPlayer.frame = 775;
+                    StaticVideoPlayer.videoPlayer.frame = Episode.whistle;
                     episode++;
                 }
 
                 break;
-            
-            case > 775 when episode == 1:
-                onPrepare.Invoke();
+            //吹哨开始
+            case > Episode.whistle when episode <= 3:
+                //每帧都要执行的大镲判定
                 ClefFadeInAndKeyCheck();
+              //吹哨开始到结束，一些仅调用一次的事件
+                switch (episode)
+                {
+                    case 1:
+                        episode++;
+                        //吹哨到踢腿行进这段，叫做准备
+                        onPrepare.Invoke();
+                        break;
+                    //其中，有个开始踢腿
+                    case 2 when StaticVideoPlayer.videoPlayer.frame >= Episode.StartMarch:
+                        episode++;
+                        onMarch.Invoke();
+                        break;
+                }
+                break;
+            //行进结束
+            case >= Episode.MarchEnd when episode == 3:
+               episode++;
+                    onEnd.Invoke();
+                
+                break;
+            //结算
+            case >= Episode.Settlement when episode == 4:
+                episode++;
+                onSettlement.Invoke();
                 break;
                 
         }
@@ -122,8 +155,8 @@ public class Core : MonoBehaviour,IUpdate
            
            
        }
-       
-       Debug.Log(cymbalAction[0]);
+
+
    }
 
    /// <summary>
@@ -138,7 +171,7 @@ public class Core : MonoBehaviour,IUpdate
        if (index == 0)
        {
            //775:老师说出展现北宇治的实力之前的部分episode = 0
-           clef.fillAmount = (float)(frame - 775)  / (cymbalAction[index] - 775);
+           clef.fillAmount = (float)(frame - 973)  / (cymbalAction[index] - 973);
        }
        else
        {

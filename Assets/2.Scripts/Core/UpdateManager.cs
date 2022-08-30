@@ -27,6 +27,11 @@ public class UpdateManager : MonoBehaviour
             Debug.LogError("意外的IUpdate注册。应晚于Awake执行");
         }
     }
+
+    public static void Remove(IUpdate update)
+    {
+        Updates.Remove(update);
+    }
     
     
     // Update is called once per frame
