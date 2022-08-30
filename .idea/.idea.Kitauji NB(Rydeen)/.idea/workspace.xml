@@ -8,6 +8,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/2.Scripts/Core/Episode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/2.Scripts/UI/HisaeMarch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2.Scripts/UI/cymbal.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -69,6 +71,7 @@
       <updated>1661749086704</updated>
       <workItem from="1661749104805" duration="5885000" />
       <workItem from="1661765304590" duration="9128000" />
+      <workItem from="1661827664991" duration="10707000" />
     </task>
     <servers />
   </component>
