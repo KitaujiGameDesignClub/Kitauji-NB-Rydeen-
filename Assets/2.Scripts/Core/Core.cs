@@ -8,20 +8,18 @@ using UnityEngine.UI;
 
 public class Core : MonoBehaviour,IUpdate
 {
-    [Header("大镲部分")]
+    [Header("大镲部")]
     public Image clef;
-
-
+    
     
     public  UnityEvent onGetButtonLeftCtrl = new UnityEvent();
+    public UnityEvent onGetButtonRightCtrl = new UnityEvent();
 
-
-    [Header("按键及时（大镲）")]
+    [Header("按键及时")]
     public UnityEvent inTime = new UnityEvent();
-   [Header("按键疏忽（大镲）")]
+   [Header("按键疏忽")]
     public UnityEvent miss = new UnityEvent();
-
-   
+    
     [Header("视频播放")]
     public  UnityEvent onStart = new UnityEvent();
    [Header("领队吹哨")]
@@ -46,8 +44,6 @@ public class Core : MonoBehaviour,IUpdate
     /// 到底几个大镲了（从0开始）0：高坂之前
     /// </summary>
     private int index;
-
-   
     
     private void Awake()
     {
@@ -78,6 +74,7 @@ public class Core : MonoBehaviour,IUpdate
         
 
         if(Input.GetKeyDown(KeyCode.LeftControl)) onGetButtonLeftCtrl.Invoke();
+        if(Input.GetKeyDown(KeyCode.RightControl)) onGetButtonRightCtrl.Invoke();
 
        
         
@@ -126,8 +123,6 @@ public class Core : MonoBehaviour,IUpdate
                 
         }
 
-
-     
         
         
     }

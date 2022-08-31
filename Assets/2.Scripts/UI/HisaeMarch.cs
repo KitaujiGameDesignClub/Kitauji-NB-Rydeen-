@@ -7,13 +7,7 @@ using UnityEngine;
 public class HisaeMarch : MonoBehaviour,IUpdate
 {
     private Transform tr;
-    /// <summary>
-    /// 结束的位置
-    /// </summary>
     public Vector2 EndPos;
-    /// <summary>
-    /// 最初的位置
-    /// </summary>
     private Vector2 initialPos;
 
     private void Awake()

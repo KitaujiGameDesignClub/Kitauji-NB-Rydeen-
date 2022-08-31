@@ -10,7 +10,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/2.Scripts/Core/Episode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2.Scripts/UI/HisaeMarch.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/2.Scripts/UI/MarchPandingArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2.Scripts/UI/cymbal.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -73,7 +72,6 @@
       <workItem from="1661749104805" duration="5885000" />
       <workItem from="1661765304590" duration="9128000" />
       <workItem from="1661827664991" duration="10707000" />
-      <workItem from="1661858329637" duration="7112000" />
     </task>
     <servers />
   </component>
