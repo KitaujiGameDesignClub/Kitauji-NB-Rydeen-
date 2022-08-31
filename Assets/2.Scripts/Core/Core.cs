@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Core : MonoBehaviour,IUpdate
 {
-    [Header("大镲部")]
+    [Header("大镲部分")]
     public Image clef;
-    
+
+
     
     public  UnityEvent onGetButtonLeftCtrl = new UnityEvent();
-    public UnityEvent onGetButtonRightCtrl = new UnityEvent();
 
-    [Header("按键及时")]
+
+    [Header("按键及时（大镲）")]
     public UnityEvent inTime = new UnityEvent();
-   [Header("按键疏忽")]
+   [Header("按键疏忽（大镲）")]
     public UnityEvent miss = new UnityEvent();
-    
+
+   
     [Header("视频播放")]
     public  UnityEvent onStart = new UnityEvent();
    [Header("领队吹哨")]
@@ -44,6 +47,8 @@ public class Core : MonoBehaviour,IUpdate
     /// 到底几个大镲了（从0开始）0：高坂之前
     /// </summary>
     private int index;
+
+   
     
     private void Awake()
     {
@@ -54,6 +59,7 @@ public class Core : MonoBehaviour,IUpdate
         //编辑器模式下，永远允许跳过老师的话
         Settings.SettingsContent.hasPlayed = true;
 #endif
+        
     }
 
     // Start is called before the first frame update
@@ -67,21 +73,34 @@ public class Core : MonoBehaviour,IUpdate
    public void FastUpdate()
     {
         //游戏暂停预留
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale >= 0.99f)
+            {
+                Time.timeScale = 0f;
+                StaticVideoPlayer.videoPlayer.Pause();
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                StaticVideoPlayer.videoPlayer.Play();
+            }
+        }
+        //重新开始
+        if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene("SampleScene");
         
         
         if(!StaticVideoPlayer.videoPlayer.isPlaying) return;
         
 
         if(Input.GetKeyDown(KeyCode.LeftControl)) onGetButtonLeftCtrl.Invoke();
-        if(Input.GetKeyDown(KeyCode.RightControl)) onGetButtonRightCtrl.Invoke();
 
        
         
         switch (StaticVideoPlayer.videoPlayer.frame)
         {
             //开始部分（用于制作跳过），到吹哨
-            case <= Episode.whistle when episode == 0:
+            case < Episode.whistle when episode == 0:
                 //空格允许跳过老师的话（在玩过之后）
                 if (Input.GetKeyDown(KeyCode.Space) && Settings.SettingsContent.hasPlayed)
                 {
@@ -91,7 +110,7 @@ public class Core : MonoBehaviour,IUpdate
 
                 break;
             //吹哨开始
-            case > Episode.whistle when episode <= 3:
+            case >= Episode.whistle when episode <= 3:
                 //每帧都要执行的大镲判定
                 ClefFadeInAndKeyCheck();
               //吹哨开始到结束，一些仅调用一次的事件
@@ -123,6 +142,8 @@ public class Core : MonoBehaviour,IUpdate
                 
         }
 
+
+     
         
         
     }

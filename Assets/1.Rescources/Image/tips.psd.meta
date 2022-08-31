@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 59356a14d6785ff40bb3706d61f3d0d9
+guid: dd1a52d7b4a04244bb0d5585539f88e0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
@@ -126,91 +126,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Rating_Perfect
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 338
-        width: 425
-        height: 125
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b9acaf4dd0114d428e6b3072e6c5780
-      internalID: -1279518075
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rating_Miss
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 192
-        width: 425
-        height: 125
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7efa2711f1cb7f24eb83b55e7935d912
-      internalID: -186800139
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rating_Wrong
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 31
-        width: 425
-        height: 125
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ac0e6a6e5e32f654591919b9a8fc5d64
-      internalID: -57736164
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rating_Null
-      rect:
-        serializedVersion: 2
-        x: 488
-        y: 147
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 892da0effaf1eb74e8f000bddaaea91a
-      internalID: 1302311372
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -221,19 +137,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Rating_3: 1640813383
-      Rating_9: -156316650
-      Rating_2: -1270413884
-      Rating_8: 1538832892
-      Rating_Perfect: -1279518075
-      Rating_7: 474807202
-      Rating_5: -389913481
-      Rating_10: -2037538124
-      Rating_Null: 1302311372
-      Rating_Miss: -186800139
-      Rating_Wrong: -57736164
-      Rating_4: 834459217
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1
