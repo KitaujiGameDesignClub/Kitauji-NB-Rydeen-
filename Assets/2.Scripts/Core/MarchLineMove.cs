@@ -26,6 +26,12 @@ public class MarchLineMove : MonoBehaviour,IUpdate
    private bool buttonMiss = true;
 
    private int index;
+
+
+   /// <summary>
+   /// 第一次return之后变为true，然后正常游戏。在此之前这个移动的线不显示，也不判定得分
+   /// </summary>
+   private bool ready;
    
    private void Awake()
     {
@@ -61,6 +67,14 @@ public class MarchLineMove : MonoBehaviour,IUpdate
 /// <param name="miss"></param>
      void Return()
     {
+        if (!ready)
+        {
+            ready = true;
+            tr.position = initialPos;
+            return;
+        }
+        
+        
         if(buttonMiss) this.miss.Invoke();
       tr.position = initialPos;
       buttonMiss = true;
@@ -90,7 +104,7 @@ public void FastUpdate()
     }
 
 
-    tr.Translate(moveSpeed * Time.deltaTime * Vector2.left);
+   if(ready)  tr.Translate(moveSpeed * Time.deltaTime * Vector2.left);
       
     }
 

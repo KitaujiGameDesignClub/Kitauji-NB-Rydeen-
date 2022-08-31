@@ -109,11 +109,18 @@ public class Core : MonoBehaviour,IUpdate
                 }
 
                 break;
+            
+       
+            
             //吹哨开始
-            case >= Episode.whistle when episode <= 3:
+            case >= Episode.whistle and < Episode.MarchEnd when episode <= 3:
+
+                if (episode == 0) episode = 1;
+               
+                
                 //每帧都要执行的大镲判定
                 ClefFadeInAndKeyCheck();
-              //吹哨开始到结束，一些仅调用一次的事件
+                //吹哨开始到结束，一些仅调用一次的事件
                 switch (episode)
                 {
                     case 1:
@@ -123,16 +130,22 @@ public class Core : MonoBehaviour,IUpdate
                         break;
                     //其中，有个开始踢腿
                     case 2 when StaticVideoPlayer.videoPlayer.frame >= Episode.StartMarch:
-                        episode++;
+                        episode++; //3
                         onMarch.Invoke();
                         break;
                 }
+ 
                 break;
             //行进结束
             case >= Episode.MarchEnd when episode == 3:
-               episode++;
-                    onEnd.Invoke();
-                
+                episode++;
+                onEnd.Invoke();
+               
+#if !UNITY_EDITOR
+//设置为已经玩过游戏了
+           Settings.SettingsContent.hasPlayed = true;      
+#endif
+             
                 break;
             //结算
             case >= Episode.Settlement when episode == 4:

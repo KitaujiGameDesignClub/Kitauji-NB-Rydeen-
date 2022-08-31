@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,7 @@ public class Loading : MonoBehaviour
     {
         Settings.SaveSettings();
         yield return Resources.UnloadUnusedAssets();
+        GC.Collect();
         yield return SceneManager.LoadSceneAsync("SampleScene");
     }
 

@@ -17,6 +17,7 @@ public class StaticVideoPlayer : MonoBehaviour
         videoPlayer = GetComponent<VideoPlayer>();
         audioSource = GetComponent<AudioSource>();
 
+        
         audioSource.volume = Settings.SettingsContent.MusicVolume;
     }
 

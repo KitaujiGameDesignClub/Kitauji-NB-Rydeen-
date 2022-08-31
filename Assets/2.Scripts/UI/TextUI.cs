@@ -97,11 +97,14 @@ public class TextUI : MonoBehaviour
         if (inTime)
         {
             right++;
-            total++;
+           total++;
         }
         else total++;
 
-        score.text = $"准确率：{((float)right / total):P2}";
+        float scoreCache = (float)right / total;
+   
+
+        score.text = $"人群呼声：{((int)(scoreCache * 100)).ToString()} / 100";
 
     }
     
@@ -109,6 +112,7 @@ public class TextUI : MonoBehaviour
     
     public void ExitGame()
     {
+        Settings.SaveSettings();
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
@@ -120,11 +124,13 @@ public class TextUI : MonoBehaviour
     {
         PublicAudioSource.PlaySoundEffect(ClickEffect);
         SceneManager.LoadScene("Opening");
+        Settings.SaveSettings();
     }
 
     public void PlayAgain()
     {
         PublicAudioSource.PlaySoundEffect(ClickEffect);
         SceneManager.LoadScene("load");
+        Settings.SaveSettings();
     }
 }

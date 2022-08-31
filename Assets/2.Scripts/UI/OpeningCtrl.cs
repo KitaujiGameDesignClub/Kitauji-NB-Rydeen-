@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -11,8 +9,8 @@ public class OpeningCtrl : MonoBehaviour
     public Slider MusicVolSlider;
     public Slider EffectVolSlider;
 
-    public CanvasGroup welcome;
-
+    public AudioClip bgm;
+   
     public UnityEvent initialization = new();
 
     private void Awake()
@@ -42,25 +40,13 @@ public class OpeningCtrl : MonoBehaviour
         {
             Settings.SettingsContent.SoundEffectVolume = arg0;
         });
+
         
-        //welcome淡入
-        StartCoroutine(WelcomeFadeIn());
+        //播放BGM
+        PublicAudioSource.PlayBackgroundMusic(bgm);
     }
 
-    IEnumerator WelcomeFadeIn()
-    {
-        welcome.alpha = 0f;
 
-        yield return new WaitForSeconds(1.2f);
-        while (true)
-        {
-            welcome.alpha = Mathf.Lerp(welcome.alpha, 1f, 0.51f * Time.deltaTime);
-            if(welcome.alpha >= 0.99f) yield break;
-            else yield return new WaitForEndOfFrame();
-            
-        }
-    }
-    
 
     public void ExitGame()
     {
