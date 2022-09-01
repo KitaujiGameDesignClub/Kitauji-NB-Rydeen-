@@ -3,20 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="25039a04-f621-4159-b408-54f688d6acb1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kitauji NB(Rydeen)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kitauji NB(Rydeen)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1.Rescources/Image/game.spriteatlas" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1.Rescources/Image/game.spriteatlas" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/Core/Core.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2.Scripts/Core/Core.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/Core/Loading.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2.Scripts/Core/Loading.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/Core/MarchLineMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2.Scripts/Core/MarchLineMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/Core/StaticVideoPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2.Scripts/Core/StaticVideoPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/UI/OpeningCtrl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2.Scripts/UI/OpeningCtrl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/UI/TextUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2.Scripts/UI/TextUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Opening.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Opening.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/load.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/load.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/NotoSansCJK-Regular-1 SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/NotoSansCJK-Regular-1 SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saves/Settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/saves/Settings.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +76,7 @@
       <workItem from="1661765304590" duration="9128000" />
       <workItem from="1661827664991" duration="10707000" />
       <workItem from="1661858329637" duration="7112000" />
-      <workItem from="1661915754629" duration="9804000" />
+      <workItem from="1661915754629" duration="10400000" />
     </task>
     <servers />
   </component>
